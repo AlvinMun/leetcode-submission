@@ -16,12 +16,12 @@ double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Si
 
     double median;
     if ((m + n) % 2 == 0) {
-        for (int i = 0; i < ((m + n) / 2) - 1; ++i) {
+        for (int i = 0; i < ((m + n) / 2) - 1; i++) {
             int temp = min();
         }
         median = (min() + min()) / 2.0;
     } else {
-        for (int i = 0; i < (m + n) / 2; ++i) {
+        for (int i = 0; i < (m + n) / 2; i++) {
             int temp = min();
         }
         median = min();
