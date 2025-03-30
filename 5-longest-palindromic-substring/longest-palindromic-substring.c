@@ -1,4 +1,4 @@
-char* longestPalindrome(char* s) {
+char *longestPalindrome(char *s) {
     int n = strlen(s);
     if (n == 0)
         return "";
