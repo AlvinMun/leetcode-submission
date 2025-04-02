@@ -10,7 +10,8 @@ int myAtoi(char* s) {
         i++;
     }
     while (s[i] == '+' || s[i] == '-') {
-        sign = (s[i] == '-') ? -1 : 1;
+        if (s[i] == '-')
+            sign *= -1;
         i++;
 
         if (s[i] < '0' || s[i] > '9')
