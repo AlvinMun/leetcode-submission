@@ -10,10 +10,10 @@ int compare(const void *a, const void *b) {
 int** threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes) {
     qsort(nums, numsSize, sizeof(int), compare);
 
-    int **res = malloc(100 * sizeof(int *));  // Start with 100 elements, adjust later
+    int **res = malloc(100 * sizeof(int *));
     *returnColumnSizes = malloc(100 * sizeof(int));
     *returnSize = 0;
-    int capacity = 100;  // Initial capacity for results
+    int capacity = 100;
 
     for (int i = 0; i < numsSize - 2; i++) {
         if (i > 0 && nums[i] == nums[i - 1])
@@ -30,9 +30,8 @@ int** threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes
             } else if (sum > 0) {
                 right--;
             } else {
-                // If we've used all initial allocated space, reallocate
                 if (*returnSize == capacity) {
-                    capacity *= 2;  // Double the capacity to prevent frequent reallocations
+                    capacity *= 2;
                     res = realloc(res, capacity * sizeof(int *));
                     *returnColumnSizes = realloc(*returnColumnSizes, capacity * sizeof(int));
                 }
@@ -44,7 +43,6 @@ int** threeSum(int *nums, int numsSize, int *returnSize, int **returnColumnSizes
                 (*returnColumnSizes)[*returnSize] = 3;
                 (*returnSize)++;
 
-                // Skip duplicates
                 while (left < right && nums[left] == nums[left + 1])
                     left++;
                 while (left < right && nums[right] == nums[right - 1])
