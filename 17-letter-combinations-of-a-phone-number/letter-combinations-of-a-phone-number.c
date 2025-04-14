@@ -11,7 +11,7 @@ const char *mapping[] = {
     "mno",
     "pqrs",
     "tuv",
-    "wxyz",
+    "wxyz"
 };
 
 void backtrack(char **result, int *returnSize, char *combination, const char *digits, int index) {
