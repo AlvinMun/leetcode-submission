@@ -15,7 +15,7 @@ struct ListNode* removeNthFromEnd(struct ListNode* head, int n) {
     }
     while (first != NULL) {
         first = first->next;
-        second= second->next;
+        second = second->next;
     }
     struct ListNode *temp = second->next;
     second->next = second->next->next;
