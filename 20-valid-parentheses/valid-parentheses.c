@@ -13,7 +13,7 @@ bool isValid(char* s) {
             if (top == -1)
                 return (false);
 
-            char topChar = stack[top --];
+            char topChar = stack[top--];
             if ((c == ')' && topChar != '(') || 
                 (c == '}' && topChar != '{') || 
                 (c == ']' && topChar != '[')) {
