@@ -1,5 +1,4 @@
-
-bool isValid(char** board, int row, int col, char c) {
+bool isValid(char **board, int row, int col, char c) {
     for (int i = 0; i < 9; i++) {
         if (board[row][i] == c) return false;
         if (board[i][col] == c) return false;
@@ -8,7 +7,7 @@ bool isValid(char** board, int row, int col, char c) {
     return true;
 }
 
-bool solve(char** board) {
+bool solve(char **board) {
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
             if (board[i][j] == '.') {
