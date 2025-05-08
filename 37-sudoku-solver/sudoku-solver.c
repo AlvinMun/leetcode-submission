@@ -1,14 +1,8 @@
-#include <stdbool.h>
-#include <string.h>
 
-// Function to check if placing 'c' in board[row][col] is valid
 bool isValid(char** board, int row, int col, char c) {
     for (int i = 0; i < 9; i++) {
-        // Check row
         if (board[row][i] == c) return false;
-        // Check column
         if (board[i][col] == c) return false;
-        // Check 3x3 sub-box
         if (board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3] == c) return false;
     }
     return true;
@@ -24,15 +18,15 @@ bool solve(char** board) {
                         if (solve(board)) {
                             return true;
                         } else {
-                            board[i][j] = '.'; // backtrack
+                            board[i][j] = '.'; 
                         }
                     }
                 }
-                return false; // trigger backtracking
+                return false;
             }
         }
     }
-    return true; // all cells filled
+    return true;
 }
 
 void solveSudoku(char** board, int boardSize, int* boardColSize) {
