@@ -18,7 +18,7 @@ void backtrack(int *candidates, int candidatesSize, int target, int start, int *
         (*returnSize)++;
         return;
     }
-    for (int i = start; i <candidatesSize; i++) {
+    for (int i = start; i < candidatesSize; i++) {
         if (i > start && candidates[i] == candidates[i - 1])
             continue;
         if (candidates[i] > target)
