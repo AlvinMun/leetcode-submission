@@ -3,6 +3,7 @@ void swap(int *a, int *b) {
     *a = *b;
     *b = temp;
 }
+
 void transpose(int **matrix, int len) {
     for (int i = 0; i < len; i++) {
         for (int j = i; j < len; j++) {
@@ -10,7 +11,8 @@ void transpose(int **matrix, int len) {
         }
     }
 }
-void changeColumns(int **matrix, int len) {
+
+void changeCols(int **matrix, int len) {
     for (int i = 0; i < len; i++) {
         if (len % 2 == 0) {
             for (int j = 0; j < len / 2; j++) {
@@ -23,7 +25,8 @@ void changeColumns(int **matrix, int len) {
         }
     }
 }
+
 void rotate(int **matrix, int matrixSize, int *matrixColSize) {
     transpose(matrix, matrixSize);
-    changeColumns(matrix, matrixSize);
+    changeCols(matrix, matrixSize);
 }
